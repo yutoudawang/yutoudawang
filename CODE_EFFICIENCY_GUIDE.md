@@ -57,7 +57,8 @@ for user in users:
 ```python
 # Loading entire file into memory
 def process_large_file(filename):
-    data = open(filename).read()  # Can cause memory issues
+    with open(filename) as f:
+        data = f.read()  # Can cause memory issues with large files
     return data.split('\n')
 ```
 

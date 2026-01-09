@@ -126,6 +126,7 @@ def fibonacci_fast(n):
 n = 30
 print(f"Computing fibonacci({n})...")
 
+call_count_slow = 0
 start = time.time()
 result_slow = fibonacci_slow(n)
 time_slow = time.time() - start
@@ -224,7 +225,8 @@ gen_result = gen_squares(n)
 
 print(f"List memory: {sys.getsizeof(list_result):,} bytes")
 print(f"Generator memory: {sys.getsizeof(gen_result):,} bytes")
-print(f"Memory saved: {sys.getsizeof(list_result) / sys.getsizeof(gen_result):.1f}x less memory")
+print(f"Note: Generator object size shown; values generated on-demand")
+print(f"Memory saved: {sys.getsizeof(list_result) / sys.getsizeof(gen_result):.1f}x less memory for generator object")
 print()
 
 
